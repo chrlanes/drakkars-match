@@ -42,6 +42,14 @@ publication-web-resources/
 > Certains logiciels exportent le script sous le nom `main.j_` (avec underscore).
 > Il faut le renommer en `main.js` avant de le pousser sur GitHub, sinon le viewer ne fonctionnera pas.
 
+> **⚠️ Important — affichage mobile (viewport)**
+> Les pages HTML de la publication doivent contenir cette balise dans le `<head>` pour s'afficher correctement sur smartphone :
+> ```html
+> <meta name="viewport" content="width=1080">
+> ```
+> Certains logiciels ne l'ajoutent pas automatiquement. Si elle est absente, le texte apparaît déformé ou trop grand sur mobile.
+> Vérifie sa présence dans chaque fichier `publication-*.html` avant de publier.
+
 ---
 
 ### 2. Le fichier `meta.json`
