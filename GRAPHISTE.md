@@ -15,7 +15,28 @@ Dès que tu pousses les fichiers, il est automatiquement visible dans l'applicat
 
 ## Ce que tu fournis pour chaque match
 
-### 1. Le fichier HTML de la publication
+### 1. ⭐ Les images JPEG haute résolution — PRIORITÉ
+
+L'application affiche les pages du programme sous forme d'images. Tu dois fournir **une image JPEG par page**, en résolution **1080×1920 px minimum**.
+
+> **Comment exporter :**
+> Dans InDesign/Affinity Publisher, exporte chaque page en JPEG (résolution 72dpi = 1080×1920px, qualité 80%).
+> Nomme les fichiers ainsi :
+> ```
+> publication-web-resources/Thumbnails/publication.jpg    ← page 0 (couverture)
+> publication-web-resources/Thumbnails/publication-1.jpg  ← page 1
+> publication-web-resources/Thumbnails/publication-2.jpg  ← page 2
+> ... (autant de pages que nécessaire)
+> ```
+> Ces images sont ce que voient les supporters dans l'app.
+
+> **⚠️ Résolution actuelle insuffisante** : ton export actuel produit des images 250×444px — trop petites sur mobile. Exporte en **1080×1920px** (ou au minimum **540×960px**).
+
+---
+
+### 2. Le fichier HTML de la publication (optionnel)
+
+L'export HTML peut être inclus pour une future évolution, mais **n'est pas utilisé pour l'affichage** (les polices Field Gothic ne peuvent pas être distribuées publiquement).
 
 Exporte ton programme depuis ton logiciel (InDesign, Affinity Publisher, etc.) en **publication web HTML**.
 
@@ -96,12 +117,12 @@ Il doit être à la racine du repo, au même niveau que `index.html`.
 
 ```
 1. Crée le programme dans ton logiciel
-2. Exporte en publication web HTML
-3. Renomme main.j_ → main.js si nécessaire
-4. Mets à jour meta.json (available: true + infos du match)
-5. Commit et push sur GitHub (branche main)
-6. Attends 1-2 minutes → GitHub Pages se met à jour automatiquement
-7. Vérifie sur https://chrlanes.github.io/drakkars-match/
+2. Exporte les pages en JPEG 1080×1920px → dossier publication-web-resources/Thumbnails/
+   (noms : publication.jpg, publication-1.jpg, publication-2.jpg, ...)
+3. Mets à jour meta.json (available: true + infos du match)
+4. Commit et push sur GitHub (branche main)
+5. Attends 1-2 minutes → GitHub Pages se met à jour automatiquement
+6. Vérifie sur https://chrlanes.github.io/drakkars-match/
 ```
 
 ---
