@@ -18,52 +18,89 @@
     header h1 { font-size: 1.8rem; color: #c0392b; margin-bottom: 8px; }
     header p { color: #8899aa; font-size: 0.9rem; }
     h2 { font-size: 1.1rem; color: #c0392b; margin: 32px 0 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+    h3 { font-size: 0.95rem; color: #d0d6e0; margin: 16px 0 8px; }
     p { margin-bottom: 12px; }
     ul { margin: 8px 0 12px 20px; }
     li { margin-bottom: 6px; }
     a { color: #c0392b; }
     .divider { border: none; border-top: 1px solid #1e2d40; margin: 32px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.92rem; }
+    th, td { padding: 8px 10px; text-align: left; border-bottom: 1px solid #1e2d40; vertical-align: top; }
+    th { color: #d0d6e0; font-weight: 600; }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
       <h1>Politique de confidentialité</h1>
-      <p>Application mobile Drakkars — Hockey Club Caen<br>
-      Dernière mise à jour : mars 2026</p>
+      <p>Application mobile Drakkars — Hockey Club de Caen<br>
+      Dernière mise à jour : mai 2026</p>
     </header>
 
     <h2>1. Responsable du traitement</h2>
     <p>
-      Hockey Club Caen — Les Drakkars<br>
-      Patinoire Caen La Mer, Caen (14)<br>
+      Hockey Club de Caen — Les Drakkars<br>
+      Association loi 1901 — SIREN 439 921 578<br>
+      Patinoire Caen La Mer, 8 rue Jean de la Varende, 14000 Caen<br>
       Contact : <a href="mailto:secretariat@hockeyclubcaen.fr">secretariat@hockeyclubcaen.fr</a>
     </p>
 
     <hr class="divider" />
 
     <h2>2. Données collectées</h2>
-    <p>Lors de la création de compte et de l'utilisation de l'application, nous collectons :</p>
+
+    <h3>2.1 Données de compte (obligatoires)</h3>
     <ul>
       <li><strong>Adresse email</strong> — identifiant de connexion</li>
       <li><strong>Nom d'affichage</strong> — choisi lors de l'inscription</li>
-      <li><strong>Rôle utilisateur</strong> — public, supporter, membre, VIP, partenaire (attribué par le club)</li>
-      <li><strong>Préférences de notifications push</strong> — activées ou désactivées par catégorie</li>
-      <li><strong>Token FCM</strong> — identifiant technique de l'appareil pour l'envoi de notifications push</li>
-      <li><strong>Points de fidélité et historique d'activité</strong> — pronostics, votes, scans partenaires</li>
+      <li><strong>Rôle utilisateur</strong> — public, supporter, membre, VIP, partenaire, staff, admin (attribué par le club)</li>
+      <li><strong>Mot de passe</strong> — haché, jamais stocké en clair (Supabase Auth)</li>
     </ul>
-    <p>Nous ne collectons pas de données de localisation, de contacts, ni d'informations de paiement.</p>
+
+    <h3>2.2 Données d'usage de l'application</h3>
+    <ul>
+      <li><strong>Préférences de notifications push</strong> — activées ou désactivées par catégorie</li>
+      <li><strong>Token FCM</strong> — identifiant technique de l'appareil pour l'envoi de notifications push (Firebase)</li>
+      <li><strong>Points de fidélité et historique d'activité</strong> — pronostics, votes, scans QR partenaires</li>
+      <li><strong>Données de session</strong> — identifiant de session active, dispositif (nom, plateforme), pour la limitation à 1 session simultanée par compte (anti-partage)</li>
+    </ul>
+
+    <h3>2.3 Données techniques d'audit de sécurité</h3>
+    <p>
+      Lorsque vous consultez des contenus protégés (vidéos, photos premium, live 360),
+      ou lorsque le système détecte une tentative de capture d'écran sur ces mêmes contenus,
+      nous enregistrons à des fins de protection des droits du club et de ses partenaires :
+    </p>
+    <ul>
+      <li><strong>Adresse IP</strong> de connexion</li>
+      <li><strong>Identifiant utilisateur</strong> associé</li>
+      <li><strong>Type de contenu consulté</strong> (vidéo, photo, live 360)</li>
+      <li><strong>User-Agent et plateforme</strong> (iOS / Android)</li>
+      <li><strong>Version de l'application</strong></li>
+      <li><strong>Horodatage</strong> de l'événement</li>
+    </ul>
+    <p>
+      Ces données sont strictement internes, ne sont jamais croisées avec d'autres traitements,
+      et ne sont accessibles qu'aux administrateurs habilités du club, dans le cadre d'une enquête
+      sur un abus ou une fuite de contenu. Voir section 5 pour les durées de conservation.
+    </p>
+
+    <p><strong>Nous ne collectons pas :</strong> données de géolocalisation, contacts du téléphone,
+    informations de paiement, identifiants publicitaires (IDFA / AAID).</p>
 
     <hr class="divider" />
 
     <h2>3. Finalités du traitement</h2>
-    <p>Les données sont utilisées exclusivement pour :</p>
+    <p>Les données sont utilisées exclusivement pour les finalités suivantes :</p>
     <ul>
-      <li>L'authentification et la gestion de votre compte</li>
-      <li>L'envoi de notifications push (résultats, actualités, alertes matchs) selon vos préférences</li>
-      <li>Le fonctionnement du programme de fidélité (cumul et affichage de points)</li>
-      <li>La gestion des pronostics et votes de match</li>
-      <li>L'accès aux contenus réservés aux abonnés (vidéos, avantages partenaires)</li>
+      <li><strong>Authentification et gestion de votre compte</strong> (base légale : exécution du contrat)</li>
+      <li><strong>Envoi de notifications push</strong> (résultats, actualités, alertes matchs) selon vos préférences (consentement révocable à tout moment dans l'application)</li>
+      <li><strong>Programme de fidélité</strong> — cumul et affichage de points, scans QR partenaires (exécution du contrat)</li>
+      <li><strong>Pronostics et votes de match</strong> (exécution du contrat)</li>
+      <li><strong>Accès aux contenus réservés aux abonnés</strong> — vidéos, avantages partenaires (exécution du contrat)</li>
+      <li><strong>Limitation à 1 session simultanée par compte</strong> — anti-partage des accès payants (intérêt légitime du club à protéger ses contenus réservés)</li>
+      <li><strong>Détection et journalisation des tentatives de capture d'écran</strong> sur les contenus protégés — protection des droits du club, des joueurs et des partenaires (intérêt légitime conformément aux CGU acceptées)</li>
+      <li><strong>Traçabilité des accès aux flux vidéo</strong> — preuve d'usage en cas d'enquête interne sur un abus ou une fuite (intérêt légitime du club)</li>
     </ul>
 
     <hr class="divider" />
@@ -71,59 +108,100 @@
     <h2>4. Hébergement et sous-traitants</h2>
     <p>Vos données sont hébergées chez les prestataires suivants :</p>
     <ul>
-      <li><strong>Supabase</strong> (base de données, authentification) — serveurs situés dans l'Union Européenne (Frankfurt, Allemagne). <a href="https://supabase.com/privacy" target="_blank">Politique de confidentialité Supabase</a></li>
-      <li><strong>Upstash</strong> (cache Redis) — serveurs situés dans l'Union Européenne (Frankfurt, Allemagne). <a href="https://upstash.com/trust/privacy.pdf" target="_blank">Politique de confidentialité Upstash</a></li>
-      <li><strong>Railway</strong> (hébergement backend) — serveurs situés aux États-Unis, soumis aux garanties du Privacy Shield / clauses contractuelles types UE. <a href="https://railway.app/legal/privacy" target="_blank">Politique de confidentialité Railway</a></li>
-      <li><strong>Google Firebase</strong> (notifications push FCM) — traitement des tokens d'appareils. <a href="https://firebase.google.com/support/privacy" target="_blank">Politique de confidentialité Firebase</a></li>
+      <li><strong>Supabase</strong> (base de données PostgreSQL, authentification) — serveurs situés dans l'Union européenne (Frankfurt, Allemagne). <a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer">Politique de confidentialité Supabase</a></li>
+      <li><strong>Upstash</strong> (cache Redis) — serveurs situés dans l'Union européenne (Frankfurt, Allemagne). <a href="https://upstash.com/trust/privacy.pdf" target="_blank" rel="noopener noreferrer">Politique de confidentialité Upstash</a></li>
+      <li><strong>Railway</strong> (hébergement backend Node.js) — serveurs situés aux États-Unis, soumis aux clauses contractuelles types de la Commission européenne. <a href="https://railway.app/legal/privacy" target="_blank" rel="noopener noreferrer">Politique de confidentialité Railway</a></li>
+      <li><strong>Google Firebase</strong> (notifications push FCM) — traitement des tokens d'appareils. <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Politique de confidentialité Firebase</a></li>
+      <li><strong>Bunny.net</strong> (CDN vidéos et photos) — diffusion des médias via URLs signées éphémères. <a href="https://bunny.net/privacy" target="_blank" rel="noopener noreferrer">Politique de confidentialité Bunny</a></li>
+      <li><strong>Sentry</strong> (observabilité d'erreurs mobiles) — captation anonymisée des crashs et exceptions JavaScript pour diagnostic. <a href="https://sentry.io/privacy/" target="_blank" rel="noopener noreferrer">Politique de confidentialité Sentry</a></li>
+      <li><strong>Resend</strong> (envoi d'emails transactionnels — confirmation, reset mot de passe). <a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Politique de confidentialité Resend</a></li>
     </ul>
-    <p>Aucune donnée n'est vendue ou transmise à des tiers à des fins commerciales.</p>
+    <p>Aucune donnée n'est vendue ou transmise à des tiers à des fins commerciales ou publicitaires.</p>
 
     <hr class="divider" />
 
     <h2>5. Durée de conservation</h2>
+    <p>Les durées de conservation varient selon la nature des données :</p>
+    <table>
+      <thead>
+        <tr><th>Catégorie de données</th><th>Durée</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Données de compte (email, nom, rôle, préférences)</td><td>Toute la durée de vie du compte</td></tr>
+        <tr><td>Token FCM</td><td>Jusqu'à désinstallation de l'application ou révocation</td></tr>
+        <tr><td>Historique de fidélité et pronostics</td><td>Toute la durée de vie du compte</td></tr>
+        <tr><td>Sessions actives</td><td>30 jours après dernière activité (puis purge automatique)</td></tr>
+        <tr><td>Journaux d'accès aux vidéos (IP, user-agent)</td><td><strong>90 jours</strong> puis purge automatique</td></tr>
+        <tr><td>Journaux de tentatives de capture (IP, user-agent, écran)</td><td><strong>90 jours</strong> puis purge automatique</td></tr>
+        <tr><td>Journal de suppression de compte (identifiant anonymisé uniquement)</td><td>Conservation pérenne — obligation légale Apple App Store guideline 5.1.1(v)</td></tr>
+        <tr><td>Journaux techniques d'authentification (rôle, modifications)</td><td>2 ans (sécurité / audit interne)</td></tr>
+      </tbody>
+    </table>
     <p>
-      Les données sont conservées tant que votre compte est actif. En cas de suppression de compte,
-      vos données personnelles sont effacées dans un délai de 30 jours. Les logs d'activité anonymisés
-      peuvent être conservés à des fins statistiques.
+      En cas de demande de suppression de compte, l'ensemble de vos données personnelles
+      identifiantes (email, nom, profil, préférences, fidélité, sessions, journaux d'accès vidéo)
+      est effacé dans un délai maximum de 30 jours. Seul un identifiant anonyme est conservé
+      dans le journal de suppression (sans email ni nom), conformément aux exigences légales.
     </p>
 
     <hr class="divider" />
 
     <h2>6. Vos droits (RGPD)</h2>
-    <p>Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez des droits suivants :</p>
+    <p>Conformément au Règlement Général sur la Protection des Données (RGPD, règlement UE 2016/679), vous disposez des droits suivants :</p>
     <ul>
-      <li><strong>Droit d'accès</strong> — consulter vos données personnelles</li>
-      <li><strong>Droit de rectification</strong> — corriger vos données (nom d'affichage modifiable dans l'app)</li>
-      <li><strong>Droit à l'effacement</strong> — demander la suppression de votre compte et de vos données</li>
-      <li><strong>Droit d'opposition</strong> — désactiver les notifications push directement dans l'app</li>
-      <li><strong>Droit à la portabilité</strong> — obtenir une copie de vos données</li>
+      <li><strong>Droit d'accès</strong> — consulter les données personnelles que nous détenons à votre sujet</li>
+      <li><strong>Droit de rectification</strong> — corriger vos données (nom d'affichage modifiable directement dans l'application)</li>
+      <li><strong>Droit à l'effacement</strong> — demander la suppression de votre compte et de l'ensemble de vos données personnelles</li>
+      <li><strong>Droit d'opposition</strong> — désactiver les notifications push directement dans l'application ; vous opposer à des traitements fondés sur l'intérêt légitime (sous réserve de l'examen de votre situation particulière)</li>
+      <li><strong>Droit à la portabilité</strong> — obtenir une copie de vos données dans un format structuré et lisible</li>
+      <li><strong>Droit à la limitation</strong> — demander la suspension temporaire d'un traitement</li>
+      <li><strong>Droit d'introduire une réclamation</strong> auprès de la Commission Nationale de l'Informatique et des Libertés (CNIL) : <a href="https://www.cnil.fr/fr/plaintes" target="_blank" rel="noopener noreferrer">cnil.fr/fr/plaintes</a></li>
     </ul>
     <p>
-      Pour exercer ces droits, contactez-nous à :
-      <a href="mailto:secretariat@hockeyclubcaen.fr">secretariat@hockeyclubcaen.fr</a>
+      Pour exercer vos droits, contactez-nous à :
+      <a href="mailto:secretariat@hockeyclubcaen.fr">secretariat@hockeyclubcaen.fr</a><br>
+      Nous nous engageons à répondre dans un délai d'un mois (extensible à trois mois en cas de demande complexe).
     </p>
 
     <hr class="divider" />
 
     <h2>7. Sécurité</h2>
+    <p>Nous mettons en œuvre les mesures techniques et organisationnelles suivantes :</p>
+    <ul>
+      <li><strong>Chiffrement des communications</strong> — toutes les requêtes entre l'application et nos serveurs transitent en HTTPS (TLS 1.2+)</li>
+      <li><strong>Stockage sécurisé des mots de passe</strong> — hachage bcrypt, jamais en clair (Supabase Auth)</li>
+      <li><strong>Stockage sécurisé des tokens d'authentification mobile</strong> — chiffrés au repos via les enclaves matérielles des systèmes (iOS Keychain, Android Keystore)</li>
+      <li><strong>Double authentification (2FA TOTP)</strong> obligatoire pour les comptes administrateurs du club</li>
+      <li><strong>Limitation à 1 session simultanée par compte</strong> — anti-partage de compte</li>
+      <li><strong>URLs vidéo signées et éphémères</strong> — les liens directs vers les contenus expirent et ne peuvent être partagés</li>
+      <li><strong>Détection des tentatives de capture d'écran</strong> sur contenus protégés (voir section 2.3)</li>
+      <li><strong>Contrôle d'accès par rôle (RLS)</strong> — chaque requête est filtrée côté base de données selon le rôle de l'utilisateur</li>
+      <li><strong>Journalisation des accès administrateurs</strong> et des modifications de rôles</li>
+    </ul>
+
+    <hr class="divider" />
+
+    <h2>8. Cookies et traceurs</h2>
     <p>
-      Les communications entre l'application et nos serveurs sont chiffrées via HTTPS.
-      Les mots de passe sont hachés et jamais stockés en clair (gestion déléguée à Supabase Auth).
-      L'accès aux données est restreint par rôle.
+      L'application mobile n'utilise pas de cookies. Le dashboard administrateur web utilise
+      uniquement des cookies techniques strictement nécessaires à l'authentification de la session
+      (pas de cookies analytiques ni publicitaires, pas de traceurs tiers).
     </p>
 
     <hr class="divider" />
 
-    <h2>8. Modifications</h2>
+    <h2>9. Modifications de la politique</h2>
     <p>
-      Cette politique peut être mise à jour. En cas de modification substantielle, une notification
-      sera affichée dans l'application. La date de dernière mise à jour est indiquée en haut de ce document.
+      Cette politique peut être mise à jour pour refléter des évolutions techniques, réglementaires
+      ou des nouveaux traitements. En cas de modification substantielle, une notification sera affichée
+      dans l'application et un email sera envoyé aux utilisateurs concernés. La date de dernière
+      mise à jour est indiquée en haut de ce document. La version archivée est consultable sur demande.
     </p>
 
     <hr class="divider" />
 
     <p style="color: #8899aa; font-size: 0.85rem; margin-top: 32px;">
-      Hockey Club Caen — Les Drakkars · <a href="https://hockeyclubcaen.com">hockeyclubcaen.com</a>
+      Hockey Club de Caen — Les Drakkars · <a href="https://hockeyclubcaen.fr">hockeyclubcaen.fr</a>
     </p>
   </div>
 </body>
