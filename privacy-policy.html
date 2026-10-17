@@ -34,7 +34,7 @@
     <header>
       <h1>Politique de confidentialité</h1>
       <p>Application mobile Drakkars — Hockey Club de Caen<br>
-      Dernière mise à jour : mai 2026</p>
+      Dernière mise à jour : octobre 2026</p>
     </header>
 
     <h2>1. Responsable du traitement</h2>
@@ -85,8 +85,23 @@
       sur un abus ou une fuite de contenu. Voir section 5 pour les durées de conservation.
     </p>
 
+    <h3>2.4 Boutique en ligne (lors d'une commande)</h3>
+    <ul>
+      <li><strong>Nom et prénom</strong> — nom sous lequel le colis part ou la commande est retirée</li>
+      <li><strong>Adresse email</strong> — confirmation de commande, suivi, rétractation</li>
+      <li><strong>Adresse postale</strong> — uniquement en cas de livraison (aucune adresse pour un retrait au Vestiaire)</li>
+      <li><strong>Historique d'achats</strong> — articles, tailles, flocages (nom et numéro brodés), montants, dates, statut de la commande et des éventuelles rétractations</li>
+      <li><strong>Version des CGV acceptées</strong> et date de l'acceptation</li>
+    </ul>
+    <p>
+      Le paiement par carte est saisi directement sur la page sécurisée de <strong>Stripe</strong>,
+      ouverte depuis l'application : le club ne reçoit ni ne conserve aucun numéro de carte.
+      L'adresse de livraison peut être mémorisée <strong>sur votre téléphone</strong> pour la commande
+      suivante ; elle en est effacée à la déconnexion.
+    </p>
+
     <p><strong>Nous ne collectons pas :</strong> données de géolocalisation, contacts du téléphone,
-    informations de paiement, identifiants publicitaires (IDFA / AAID).</p>
+    informations de paiement (numéros de carte, saisis uniquement chez Stripe), identifiants publicitaires (IDFA / AAID).</p>
 
     <hr class="divider" />
 
@@ -101,6 +116,7 @@
       <li><strong>Limitation à 1 session simultanée par compte</strong> — anti-partage des accès payants (intérêt légitime du club à protéger ses contenus réservés)</li>
       <li><strong>Détection et journalisation des tentatives de capture d'écran</strong> sur les contenus protégés — protection des droits du club, des joueurs et des partenaires (intérêt légitime conformément aux CGU acceptées)</li>
       <li><strong>Traçabilité des accès aux flux vidéo</strong> — preuve d'usage en cas d'enquête interne sur un abus ou une fuite (intérêt légitime du club)</li>
+      <li><strong>Boutique en ligne</strong> — préparer, expédier ou remettre, et suivre votre commande ; traiter une rétractation ou un remboursement (exécution du contrat) ; conserver les pièces comptables (obligation légale, article L123-22 du Code de commerce). Ces données ne sont ni vendues ni utilisées à d'autres fins.</li>
     </ul>
 
     <hr class="divider" />
@@ -114,7 +130,8 @@
       <li><strong>Google Firebase</strong> (notifications push FCM) — traitement des tokens d'appareils. <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Politique de confidentialité Firebase</a></li>
       <li><strong>Bunny.net</strong> (CDN vidéos et photos) — diffusion des médias via URLs signées éphémères. <a href="https://bunny.net/privacy" target="_blank" rel="noopener noreferrer">Politique de confidentialité Bunny</a></li>
       <li><strong>Sentry</strong> (observabilité d'erreurs mobiles) — captation anonymisée des crashs et exceptions JavaScript pour diagnostic. <a href="https://sentry.io/privacy/" target="_blank" rel="noopener noreferrer">Politique de confidentialité Sentry</a></li>
-      <li><strong>Resend</strong> (envoi d'emails transactionnels — confirmation, reset mot de passe). <a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Politique de confidentialité Resend</a></li>
+      <li><strong>Resend</strong> (envoi d'emails transactionnels — confirmation, reset mot de passe, confirmation de commande et accusé de rétractation). <a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Politique de confidentialité Resend</a></li>
+      <li><strong>Stripe</strong> (paiement des commandes de la boutique) — reçoit le montant et l'adresse email de la commande, et recueille directement les données de carte. <a href="https://stripe.com/fr/privacy" target="_blank" rel="noopener noreferrer">Politique de confidentialité Stripe</a></li>
     </ul>
     <p>Aucune donnée n'est vendue ou transmise à des tiers à des fins commerciales ou publicitaires.</p>
 
@@ -135,6 +152,8 @@
         <tr><td>Journaux de tentatives de capture (IP, user-agent, écran)</td><td><strong>90 jours</strong> puis purge automatique</td></tr>
         <tr><td>Journal de suppression de compte (identifiant anonymisé uniquement)</td><td>Conservation pérenne — obligation légale Apple App Store guideline 5.1.1(v)</td></tr>
         <tr><td>Journaux techniques d'authentification (rôle, modifications)</td><td>2 ans (sécurité / audit interne)</td></tr>
+        <tr><td>Commandes payées et rétractations de la boutique (nom, email, adresse, articles, montants)</td><td><strong>10 ans</strong> — pièces comptables (article L123-22 du Code de commerce), puis suppression</td></tr>
+        <tr><td>Commandes abandonnées avant paiement</td><td>Supprimées après <strong>30 jours</strong></td></tr>
       </tbody>
     </table>
     <p>
@@ -142,6 +161,9 @@
       identifiantes (email, nom, profil, préférences, fidélité, sessions, journaux d'accès vidéo)
       est effacé dans un délai maximum de 30 jours. Seul un identifiant anonyme est conservé
       dans le journal de suppression (sans email ni nom), conformément aux exigences légales.
+      <strong>Exception :</strong> les commandes payées et les rétractations de la boutique sont des
+      pièces comptables ; elles sont détachées de votre compte mais conservées, avec les nom, email
+      et adresse qu'elles portent, jusqu'à la fin de leur durée légale de 10 ans.
     </p>
 
     <hr class="divider" />
@@ -151,13 +173,14 @@
     <ul>
       <li><strong>Droit d'accès</strong> — consulter les données personnelles que nous détenons à votre sujet</li>
       <li><strong>Droit de rectification</strong> — corriger vos données (nom d'affichage modifiable directement dans l'application)</li>
-      <li><strong>Droit à l'effacement</strong> — demander la suppression de votre compte et de l'ensemble de vos données personnelles</li>
-      <li><strong>Droit d'opposition</strong> — désactiver les notifications push directement dans l'application ; vous opposer à des traitements fondés sur l'intérêt légitime (sous réserve de l'examen de votre situation particulière)</li>
+      <li><strong>Droit à l'effacement</strong> — demander la suppression de votre compte et de l'ensemble de vos données personnelles, sous réserve des pièces comptables de la boutique (section 5)</li>
+      <li><strong>Droit d'opposition</strong> — désactiver les notifications push directement dans l'application ; vous opposer à des traitements fondés sur l'intérêt légitime (sous réserve de l'examen de votre situation particulière). Les données de la boutique, fondées sur le contrat et l'obligation comptable, ne relèvent pas de ce droit.</li>
       <li><strong>Droit à la portabilité</strong> — obtenir une copie de vos données dans un format structuré et lisible</li>
       <li><strong>Droit à la limitation</strong> — demander la suspension temporaire d'un traitement</li>
       <li><strong>Droit d'introduire une réclamation</strong> auprès de la Commission Nationale de l'Informatique et des Libertés (CNIL) : <a href="https://www.cnil.fr/fr/plaintes" target="_blank" rel="noopener noreferrer">cnil.fr/fr/plaintes</a></li>
     </ul>
     <p>
+      Pour une question sur une commande de la boutique : <a href="mailto:support@hockeyclubcaen.fr">support@hockeyclubcaen.fr</a>.<br>
       Pour exercer vos droits, contactez-nous à :
       <a href="mailto:secretariat@hockeyclubcaen.fr">secretariat@hockeyclubcaen.fr</a><br>
       Nous nous engageons à répondre dans un délai d'un mois (extensible à trois mois en cas de demande complexe).
